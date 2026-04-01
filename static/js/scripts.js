@@ -6,6 +6,7 @@ let scrollSpyInstance = null;
 function bindConfigLinks(yml) {
     const optionalLinks = [
         ['sidebar-email-link', yml['sidebar-email-link']],
+        ['sidebar-github-link', yml['sidebar-github-link']],
         ['sidebar-scholar-link', yml['sidebar-scholar-link']],
         ['sidebar-orcid-link', yml['sidebar-orcid-link']],
         ['sidebar-rg-link', yml['sidebar-rg-link']]
@@ -87,10 +88,8 @@ window.addEventListener('DOMContentLoaded', event => {
 
     // Collapse responsive navbar when toggler is visible
     const navbarToggler = document.body.querySelector('.navbar-toggler');
-    const responsiveNavItems = [].slice.call(
-        document.querySelectorAll('#navbarResponsive .nav-link')
-    );
-    responsiveNavItems.map(function (responsiveNavItem) {
+    const responsiveNavItems = document.querySelectorAll('#navbarResponsive .nav-link');
+    responsiveNavItems.forEach(function (responsiveNavItem) {
         responsiveNavItem.addEventListener('click', () => {
             const hash = responsiveNavItem.getAttribute('href');
             if (hash && hash.startsWith('#')) {
@@ -117,18 +116,18 @@ window.addEventListener('DOMContentLoaded', event => {
                 try {
                     document.getElementById(key).textContent = yml[key];
                 } catch {
-                    console.log("Unknown id and value: " + key + "," + yml[key].toString())
+                    console.warn(`Unknown config key: ${key}`);
                 }
 
             })
             bindConfigLinks(yml);
         })
-        .catch(error => console.log(error));
+        .catch(error => console.error(error));
 
 
     // Marked
     marked.use({ mangle: false, headerIds: false })
-    section_names.forEach((name, idx) => {
+    section_names.forEach((name) => {
         fetch(content_dir + name + '.md')
             .then(response => response.text())
             .then(markdown => {
@@ -137,7 +136,7 @@ window.addEventListener('DOMContentLoaded', event => {
                 enhanceDetailsAnimations(document.getElementById(name + '-md'));
                 refreshScrollSpy();
             })
-            .catch(error => console.log(error));
+            .catch(error => console.error(error));
     })
 
     window.addEventListener('hashchange', () => {

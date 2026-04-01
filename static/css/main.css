@@ -47,6 +47,19 @@ body {
     text-overflow: ellipsis;
 }
 
+.nav-toggle-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 0.28rem;
+}
+
+.nav-toggle-icon svg {
+    width: 1rem;
+    height: 1rem;
+    display: block;
+}
+
 #mainNav .navbar-nav .nav-item .nav-link {
     position: relative;
     color: var(--text-main);
@@ -173,11 +186,6 @@ body {
     transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
 }
 
-.profile-link-icon i {
-    color: inherit;
-    font-size: 0.88rem;
-}
-
 .profile-link-icon svg {
     width: 0.98rem;
     height: 0.98rem;
@@ -298,9 +306,12 @@ body {
     opacity: 0.85;
 }
 
-.section-icon i {
+.section-icon svg {
     position: relative;
     z-index: 1;
+    width: 1.05rem;
+    height: 1.05rem;
+    display: block;
 }
 
 .section-heading--research .section-icon {
@@ -348,8 +359,7 @@ body {
     background: linear-gradient(135deg, rgba(22, 93, 255, 0.22), rgba(22, 93, 255, 0.08));
 }
 
-.section-heading--undergraduate .section-icon i {
-    font-size: 0.98rem;
+.section-heading--undergraduate .section-icon svg {
     transform: translateY(0.02rem);
 }
 
@@ -438,17 +448,20 @@ body {
 }
 
 .main-body summary::after {
-    content: "\F282";
-    font-family: bootstrap-icons;
+    content: "";
     position: absolute;
     right: 1.15rem;
     top: 50%;
-    transform: translateY(-50%) rotate(0deg);
+    width: 0.48rem;
+    height: 0.48rem;
+    border-right: 2px solid currentColor;
+    border-bottom: 2px solid currentColor;
+    transform: translateY(-70%) rotate(45deg);
     transition: transform 220ms ease;
 }
 
 .main-body details[open] summary::after {
-    transform: translateY(-50%) rotate(180deg);
+    transform: translateY(-35%) rotate(-135deg);
 }
 
 .main-body summary:hover {
@@ -686,10 +699,13 @@ body {
 .main-body details.publication-abstract summary::after {
     position: static;
     display: inline-block;
+    width: 0.42rem;
+    height: 0.42rem;
     margin-left: 0;
-    font-size: 0.86em;
-    line-height: 1;
-    transform: rotate(0deg);
+    vertical-align: middle;
+    border-right: 2px solid currentColor;
+    border-bottom: 2px solid currentColor;
+    transform: translateY(-0.04rem) rotate(45deg);
 }
 
 .main-body details.publication-abstract[open],
@@ -705,7 +721,7 @@ body {
 
 .main-body details.publication-abstract[open] summary::after,
 .main-body details.publication-abstract.is-open summary::after {
-    transform: rotate(180deg);
+    transform: translateY(0.02rem) rotate(-135deg);
 }
 
 .main-body details.publication-abstract .details-body {
