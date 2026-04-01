@@ -9,13 +9,15 @@
     --line-color: #e5e7eb;
     --panel-bg: #ffffff;
     --page-bg: #f7f9fc;
+    --nav-offset: 5.65rem;
+    --sidebar-offset: 5.35rem;
     --shadow-soft: 0 10px 30px rgba(22, 93, 255, 0.08);
     --shadow-card: 0 14px 36px rgba(15, 23, 42, 0.08);
     --shadow-hover: 0 22px 48px rgba(22, 93, 255, 0.14);
 }
 
 html {
-    scroll-padding-top: 6rem;
+    scroll-padding-top: calc(var(--nav-offset) + 0.35rem);
 }
 
 body {
@@ -102,7 +104,7 @@ body {
 }
 
 .site-main {
-    padding: 7.75rem 0 3.5rem;
+    padding: calc(var(--nav-offset) + 1.6rem) 0 3.5rem;
 }
 
 .page-layout {
@@ -114,8 +116,11 @@ body {
 
 .profile-sidebar {
     position: sticky;
-    top: 6.9rem;
+    top: var(--sidebar-offset);
     margin-left: -0.4rem;
+    margin-top: -0.7rem;
+    align-self: start;
+    z-index: 20;
 }
 
 .profile-card {
@@ -124,6 +129,28 @@ body {
     border-radius: 24px;
     padding: 1.6rem 1.35rem;
     box-shadow: var(--shadow-soft);
+    max-height: calc(100vh - var(--sidebar-offset) - 1rem);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(22, 93, 255, 0.24) transparent;
+}
+
+.profile-card::-webkit-scrollbar {
+    width: 0.38rem;
+}
+
+.profile-card::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.profile-card::-webkit-scrollbar-thumb {
+    background: rgba(22, 93, 255, 0.18);
+    border-radius: 999px;
+}
+
+.profile-card::-webkit-scrollbar-thumb:hover {
+    background: rgba(22, 93, 255, 0.3);
 }
 
 .profile-avatar {
@@ -764,6 +791,7 @@ body {
     .profile-sidebar {
         position: static;
         margin-left: 0;
+        margin-top: 0;
     }
 
     .profile-card {
@@ -771,6 +799,9 @@ body {
         grid-template-columns: 120px 1fr;
         gap: 1rem 1.15rem;
         align-items: start;
+        max-height: none;
+        overflow: visible;
+        scrollbar-width: auto;
     }
 
     .profile-avatar {
