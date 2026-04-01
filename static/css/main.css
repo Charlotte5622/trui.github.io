@@ -526,6 +526,13 @@ body {
     background: #fff;
 }
 
+.publication-figure--centered img,
+.publication-figure--centered picture,
+.publication-figure--centered video,
+.publication-figure--centered canvas {
+    object-position: center center;
+}
+
 .publication-figure:hover {
     transform: translateY(-4px);
     box-shadow: var(--shadow-hover);
@@ -639,6 +646,72 @@ body {
 
 .publication-links a:hover {
     color: var(--accent-hover);
+}
+
+.main-body details.publication-abstract {
+    margin-top: 0;
+    border: 0;
+    background: transparent;
+    box-shadow: none;
+    overflow: visible;
+    flex: 0 0 auto;
+    min-width: 0;
+}
+
+.main-body details.publication-abstract:hover {
+    border-color: transparent;
+    box-shadow: none;
+    transform: none;
+}
+
+.main-body details.publication-abstract summary {
+    padding: 0;
+    font-size: 0.98rem;
+    line-height: 1.4;
+    color: var(--accent-color);
+    background: transparent;
+}
+
+.main-body details.publication-abstract summary:hover {
+    background: transparent;
+    color: var(--accent-hover);
+}
+
+.main-body details.publication-abstract summary::after {
+    position: static;
+    display: inline-block;
+    margin-left: 0.3rem;
+    transform: rotate(0deg);
+}
+
+.main-body details.publication-abstract[open],
+.main-body details.publication-abstract.is-open {
+    flex-basis: 100%;
+}
+
+.main-body details.publication-abstract[open] summary,
+.main-body details.publication-abstract.is-open summary {
+    border-bottom: 0;
+    margin-bottom: 0.4rem;
+}
+
+.main-body details.publication-abstract[open] summary::after,
+.main-body details.publication-abstract.is-open summary::after {
+    transform: rotate(180deg);
+}
+
+.main-body details.publication-abstract .details-body {
+    padding: 0;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+}
+
+.main-body details.publication-abstract[open] .details-body,
+.main-body details.publication-abstract.is-open .details-body {
+    padding: 0;
+    max-height: 640px;
+    opacity: 1;
 }
 
 .publication-notes {
@@ -768,6 +841,7 @@ body {
 
     .profile-sidebar {
         position: static;
+        margin-left: 0;
     }
 
     .profile-card {

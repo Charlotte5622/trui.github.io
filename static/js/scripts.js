@@ -1,6 +1,7 @@
 const content_dir = 'contents/'
 const config_file = 'config.yml'
 const section_names = ['home', 'awards', 'experience', 'publications'];
+let scrollSpyInstance = null;
 
 function bindConfigLinks(yml) {
     const optionalLinks = [
@@ -22,6 +23,24 @@ function bindConfigLinks(yml) {
             element.removeAttribute('href');
             element.classList.add('is-placeholder');
         }
+    });
+}
+
+function refreshScrollSpy() {
+    if (!scrollSpyInstance) {
+        return;
+    }
+
+    window.requestAnimationFrame(() => {
+        scrollSpyInstance.refresh();
+    });
+}
+
+function setActiveNavLink(hash) {
+    const navLinks = document.querySelectorAll('#navbarResponsive .nav-link');
+    navLinks.forEach((link) => {
+        const isActive = link.getAttribute('href') === hash;
+        link.classList.toggle('active', isActive);
     });
 }
 
@@ -48,6 +67,8 @@ function enhanceDetailsAnimations(root = document) {
             } else {
                 details.classList.remove('is-open');
             }
+
+            refreshScrollSpy();
         });
     });
 }
@@ -58,7 +79,7 @@ window.addEventListener('DOMContentLoaded', event => {
     // Activate Bootstrap scrollspy on the main nav element
     const mainNav = document.body.querySelector('#mainNav');
     if (mainNav) {
-        new bootstrap.ScrollSpy(document.body, {
+        scrollSpyInstance = new bootstrap.ScrollSpy(document.body, {
             target: '#mainNav',
             offset: 74,
         });
@@ -71,6 +92,12 @@ window.addEventListener('DOMContentLoaded', event => {
     );
     responsiveNavItems.map(function (responsiveNavItem) {
         responsiveNavItem.addEventListener('click', () => {
+            const hash = responsiveNavItem.getAttribute('href');
+            if (hash && hash.startsWith('#')) {
+                setActiveNavLink(hash);
+                window.setTimeout(refreshScrollSpy, 120);
+            }
+
             if (window.getComputedStyle(navbarToggler).display !== 'none') {
                 navbarToggler.click();
             }
@@ -108,8 +135,16 @@ window.addEventListener('DOMContentLoaded', event => {
                 const html = marked.parse(markdown);
                 document.getElementById(name + '-md').innerHTML = html;
                 enhanceDetailsAnimations(document.getElementById(name + '-md'));
+                refreshScrollSpy();
             })
             .catch(error => console.log(error));
     })
+
+    window.addEventListener('hashchange', () => {
+        if (window.location.hash) {
+            setActiveNavLink(window.location.hash);
+        }
+        refreshScrollSpy();
+    });
 
 }); 

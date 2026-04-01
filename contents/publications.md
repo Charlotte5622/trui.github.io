@@ -19,19 +19,24 @@
       <span>DOI: To appear</span>
     </div>
     <div class="publication-links">
-      <a href="#">Paper</a>
+      <a href="#">PDF</a>
       <a href="https://github.com/Charlotte5622/ARA-BSN">Code</a>
+      <details class="publication-abstract">
+        <summary>Abstract</summary>
+        <div class="details-body">
+          <ul class="publication-notes">
+            <li>Accepted by <strong>IEEE Transactions on Multimedia (TMM, CCF-A)</strong>.</li>
+            <li>Proposes the adaptive region-aware blind-spot framework <code>ARA-BSN</code> for self-supervised real image denoising.</li>
+            <li>Formal bibliographic details will be updated after publication.</li>
+          </ul>
+        </div>
+      </details>
     </div>
-    <ul class="publication-notes">
-      <li>Accepted by <strong>IEEE Transactions on Multimedia (TMM, CCF-A)</strong>.</li>
-      <li>Proposes the adaptive region-aware blind-spot framework <code>ARA-BSN</code> for self-supervised real image denoising.</li>
-      <li>Formal bibliographic details will be updated after publication.</li>
-    </ul>
   </div>
 </div>
 
 <div class="publication-item">
-  <div class="publication-figure" data-badge="发明专利">
+  <div class="publication-figure publication-figure--centered" data-badge="发明专利">
     <img src="static/assets/img/research/ara-bsn-invention-patent-cover.png" alt="Patent cover for the invention patent on region-aware self-supervised image denoising">
   </div>
   <div class="publication-content">
@@ -47,10 +52,16 @@
     </div>
     <div class="publication-links">
       <a href="static/assets/files/research/ara-bsn-invention-patent.pdf" download="ara-bsn-invention-patent.pdf">PDF</a>
+      <details class="publication-abstract">
+        <summary>Abstract</summary>
+        <div class="details-body">
+          <ul class="publication-notes">
+            <li>This invention patent focuses on a region-aware self-supervised image denoising method, system, device, and medium.</li>
+            <li>The patent PDF is provided as a direct-download file rather than an external jump link.</li>
+          </ul>
+        </div>
+      </details>
     </div>
-    <ul class="publication-notes">
-      <li>The patent PDF is provided as a direct-download file rather than an external jump link.</li>
-    </ul>
   </div>
 </div>
 
