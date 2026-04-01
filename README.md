@@ -26,24 +26,30 @@ No build step is required. The site can be deployed directly with GitHub Pages.
 
 ```text
 .
-├── contents
-│   ├── config.yml
-│   ├── home.md
-│   ├── publications.md
-│   ├── awards.md
-│   └── experience.md
-├── static
-│   ├── assets
-│   │   ├── favicon.ico
-│   │   └── img
-│   ├── css
-│   │   ├── styles.css
-│   │   └── main.css
-│   └── js
-│       ├── scripts.js
-│       └── ...
-├── index.html
-└── README.md
+|-- contents
+|   |-- config.yml
+|   |-- home.md
+|   |-- publications.md
+|   |-- awards.md
+|   `-- experience.md
+|-- static
+|   |-- assets
+|   |   |-- favicon.ico
+|   |   |-- files
+|   |   |   `-- research
+|   |   |       `-- ara-bsn-invention-patent.pdf
+|   |   `-- img
+|   |       |-- photo.png
+|   |       `-- research
+|   |           `-- ara-bsn-invention-patent-cover.png
+|   |-- css
+|   |   |-- styles.css
+|   |   `-- main.css
+|   `-- js
+|       |-- scripts.js
+|       `-- ...
+|-- index.html
+`-- README.md
 ```
 
 ## Content Mapping
@@ -88,9 +94,14 @@ Edit `contents/publications.md`.
 
 The paper card area is already styled as a figure slot for real paper images. To replace the placeholder:
 
-1. put your paper figure into `static/assets/img/`
+1. put your paper figure into `static/assets/img/research/`
 2. replace the placeholder block in `contents/publications.md` with an actual `<img>` tag
 3. keep the surrounding `publication-item` structure unchanged for best layout results
+
+Patent covers and downloadable files are organized separately:
+
+- patent cover images: `static/assets/img/research/`
+- patent or supplementary PDFs: `static/assets/files/research/`
 
 ### 4. Update undergraduate or Ph.D. sections
 
@@ -104,7 +115,8 @@ Edit:
 Suggested files:
 
 - avatar: `static/assets/img/photo.png`
-- paper figures: `static/assets/img/`
+- research figures and covers: `static/assets/img/research/`
+- downloadable research files: `static/assets/files/research/`
 
 ## Local Preview
 
@@ -161,6 +173,7 @@ git push origin main
 - The site is fully static and easy to maintain
 - The navigation and layout are optimized for mobile devices
 - The paper figure area is intentionally reserved for real research images
+- Patent PDFs can be served as direct-download resources
 - If DOI, code, or publication links are not yet public, placeholder text can be used temporarily
 
 ## License
