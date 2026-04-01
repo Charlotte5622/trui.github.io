@@ -19,8 +19,8 @@
       <span>DOI: To appear</span>
     </div>
     <div class="publication-links">
-      <a href="#">PDF</a>
-      <a href="#">Code</a>
+      <a href="#">Paper</a>
+      <a href="https://github.com/Charlotte5622/ARA-BSN">Code</a>
     </div>
     <ul class="publication-notes">
       <li>Accepted by <strong>IEEE Transactions on Multimedia (TMM, CCF-A)</strong>.</li>
