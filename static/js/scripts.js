@@ -15,8 +15,9 @@ function bindConfigLinks(yml) {
         if (!element) {
             return;
         }
-        if (href) {
+        if (href && href !== '#') {
             element.href = href;
+            element.classList.remove('is-placeholder');
         } else {
             element.removeAttribute('href');
             element.classList.add('is-placeholder');
@@ -83,8 +84,11 @@ window.addEventListener('DOMContentLoaded', event => {
         .then(text => {
             const yml = jsyaml.load(text);
             Object.keys(yml).forEach(key => {
+                if (key.endsWith('-link')) {
+                    return;
+                }
                 try {
-                    document.getElementById(key).innerHTML = yml[key];
+                    document.getElementById(key).textContent = yml[key];
                 } catch {
                     console.log("Unknown id and value: " + key + "," + yml[key].toString())
                 }
@@ -104,9 +108,6 @@ window.addEventListener('DOMContentLoaded', event => {
                 const html = marked.parse(markdown);
                 document.getElementById(name + '-md').innerHTML = html;
                 enhanceDetailsAnimations(document.getElementById(name + '-md'));
-            }).then(() => {
-                // MathJax
-                MathJax.typeset();
             })
             .catch(error => console.log(error));
     })
