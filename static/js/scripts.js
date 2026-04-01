@@ -3,6 +3,24 @@ const config_file = 'config.yml'
 const section_names = ['home', 'awards', 'experience', 'publications'];
 let scrollSpyInstance = null;
 
+function parseCssLength(value, rootFontSize) {
+    const normalized = `${value || ''}`.trim();
+    if (!normalized) {
+        return 0;
+    }
+
+    const numeric = Number.parseFloat(normalized);
+    if (Number.isNaN(numeric)) {
+        return 0;
+    }
+
+    if (normalized.endsWith('rem')) {
+        return numeric * rootFontSize;
+    }
+
+    return numeric;
+}
+
 function lockSidebarCard() {
     const sidebar = document.querySelector('.profile-sidebar');
     const card = sidebar ? sidebar.querySelector('.profile-card') : null;
@@ -27,14 +45,15 @@ function lockSidebarCard() {
             return;
         }
 
-        const rect = card.getBoundingClientRect();
+        const rect = sidebar.getBoundingClientRect();
         const cardHeight = card.offsetHeight;
         const rootStyles = window.getComputedStyle(document.documentElement);
-        const sidebarOffset = Number.parseFloat(rootStyles.getPropertyValue('--sidebar-offset')) || 0;
+        const rootFontSize = Number.parseFloat(rootStyles.fontSize) || 16;
+        const sidebarOffset = parseCssLength(rootStyles.getPropertyValue('--sidebar-offset'), rootFontSize);
 
-        sidebar.style.setProperty('--sidebar-lock-top', `${Math.max(rect.top, sidebarOffset)}px`);
+        sidebar.style.setProperty('--sidebar-lock-top', `${sidebarOffset}px`);
         sidebar.style.setProperty('--sidebar-lock-left', `${rect.left}px`);
-        sidebar.style.setProperty('--sidebar-lock-width', `${rect.width}px`);
+        sidebar.style.setProperty('--sidebar-lock-width', `${sidebar.offsetWidth}px`);
         sidebar.style.setProperty('--profile-card-height', `${cardHeight}px`);
         sidebar.classList.add('sidebar-locked');
     });
