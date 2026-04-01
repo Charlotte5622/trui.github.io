@@ -3,6 +3,8 @@
 
 :root{
     --h-title-color:#3948d2;
+    --soft-border-color:#d9e0f2;
+    --soft-bg-color:#f7f9ff;
 }
 
 .header {
@@ -52,6 +54,40 @@ section .main-body{
     font-size: 1.3rem;
     font-weight: 200;
     line-height: 2.4rem;
+}
+
+.main-body p,
+.main-body li {
+    color: #3d4654;
+}
+
+.main-body details {
+    margin-top: 1.5rem;
+    border: 1px solid var(--soft-border-color);
+    border-radius: 18px;
+    background: var(--soft-bg-color);
+    overflow: hidden;
+}
+
+.main-body summary {
+    list-style: none;
+    cursor: pointer;
+    padding: 1rem 1.4rem;
+    font-weight: 600;
+    color: var(--h-title-color);
+    user-select: none;
+}
+
+.main-body summary::-webkit-details-marker {
+    display: none;
+}
+
+.main-body details[open] summary {
+    border-bottom: 1px solid var(--soft-border-color);
+}
+
+.main-body .details-body {
+    padding: 1rem 1.4rem 1.4rem;
 }
 
 

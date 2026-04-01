@@ -1,17 +1,23 @@
 [![GitHub](https://img.shields.io/badge/GitHub-Charlotte5622-blue?logo=github)](https://github.com/Charlotte5622)
 
-我目前就读于**山东财经大学**，专业为**信息管理与信息系统（大数据与商务分析方向）**，预计于 **2026 年 6 月**毕业。我的研究与实践兴趣主要集中在**计算机视觉、图像去噪、自监督学习、具身交互与大模型应用**。
+我将于 **2026 年 9 月** 进入 **华中科技大学** 直博。当前主页将主要用于展示我的研究方向、学术进展与代表性成果；本科阶段的竞赛、科研与积累内容已单独整理，并放在下方可展开区域中，便于与后续博士阶段成果区分展示。
 
-#### 联系方式
+我的研究兴趣主要包括 **Computer Vision**, **Image Denoising**, **Self-Supervised Learning**, **Embodied Interaction**, 以及 **Large Model Fine-tuning and RAG**。
+
+#### About Me
+<code>张桐瑞</code>  
+<code>华中科技大学直博（2026.09 入学）</code>  
+<code>山东财经大学 信息管理与信息系统（2022.09 - 2026.06）</code>
+
+#### Contact
 <code>13325112114</code>  
-<code>13325112114@163.com</code>  
-<code>山东省济南市</code>
+<code>trui@r-r.cc</code>  
+<code>Jinan, China</code>
 
-#### 教育背景
-**山东财经大学**, 信息管理与信息系统（大数据与商务分析） 本科（2022.09 - 2026.06）  
+#### Education
+**Huazhong University of Science and Technology**, Direct Ph.D. Student (expected from 2026.09)  
+
+**Shandong University of Finance and Economics**, B.Eng. in Information Management and Information System (2022.09 - 2026.06)  
 - GPA: 4.38/5.00  
-- 专业排名: 1/492  
-- 奖学金: 2024 国家奖学金、2023-2024 学年特等奖学金
-
-#### 研究兴趣
-计算机视觉，真实图像去噪，自监督学习，混合现实与重定向行走，大模型微调与 RAG。
+- Rank: 1/492  
+- Scholarships: National Scholarship (2024), Special Scholarship (2023-2024)
