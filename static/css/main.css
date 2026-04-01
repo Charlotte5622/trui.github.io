@@ -152,15 +152,73 @@ body {
 .profile-links li {
     display: flex;
     align-items: center;
-    gap: 0.72rem;
+    gap: 0.78rem;
     color: var(--text-main);
     font-size: 0.98rem;
     min-width: 0;
 }
 
-.profile-links i {
+.profile-link-icon,
+.profile-link-badge {
+    width: 1.7rem;
+    height: 1.7rem;
+    flex: 0 0 1.7rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.56rem;
+    border: 1px solid rgba(22, 93, 255, 0.1);
+    box-shadow: 0 8px 18px rgba(15, 23, 42, 0.05);
+    background: linear-gradient(180deg, #ffffff 0%, #f5f8ff 100%);
+    transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+}
+
+.profile-link-icon i {
+    color: inherit;
+    font-size: 0.88rem;
+}
+
+.profile-link-icon--location {
     color: var(--accent-color);
-    flex: 0 0 auto;
+}
+
+.profile-link-icon--email {
+    color: #2b6de5;
+}
+
+.profile-link-icon--github {
+    color: #1f2937;
+}
+
+.profile-link-badge {
+    font-size: 0.64rem;
+    font-weight: 800;
+    letter-spacing: 0.02em;
+    line-height: 1;
+}
+
+.profile-link-badge--scholar {
+    color: #165DFF;
+    background: linear-gradient(135deg, #eef4ff, #dce9ff);
+    border-color: rgba(22, 93, 255, 0.14);
+}
+
+.profile-link-badge--orcid {
+    color: #1c9b63;
+    background: linear-gradient(135deg, #eefcf5, #dff7ea);
+    border-color: rgba(28, 155, 99, 0.14);
+}
+
+.profile-link-badge--rg {
+    color: #177c89;
+    background: linear-gradient(135deg, #eefbfc, #def4f6);
+    border-color: rgba(23, 124, 137, 0.14);
+}
+
+.profile-links li:hover .profile-link-icon,
+.profile-links li:hover .profile-link-badge {
+    transform: translateY(-1px);
+    box-shadow: 0 12px 22px rgba(22, 93, 255, 0.08);
 }
 
 .profile-links span {
@@ -266,17 +324,35 @@ body {
 }
 
 .section-heading--undergraduate .section-icon {
-    background: linear-gradient(135deg, #eef4ff, #dfeaff);
+    background: linear-gradient(135deg, #edf4ff, #d8e7ff);
     color: var(--accent-color);
     border-color: rgba(22, 93, 255, 0.14);
+    box-shadow: 0 12px 28px rgba(22, 93, 255, 0.12);
+}
+
+.section-heading--undergraduate .section-icon::before {
+    inset: 0.22rem;
+    border-radius: 0.74rem;
+    background:
+        radial-gradient(circle at 30% 28%, rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.78) 42%, rgba(255, 255, 255, 0.28) 100%),
+        linear-gradient(145deg, rgba(255, 255, 255, 0.82), rgba(255, 255, 255, 0.16));
+    opacity: 1;
 }
 
 .section-heading--undergraduate .section-icon::after {
     content: "";
     position: absolute;
-    inset: -0.12rem;
-    border-radius: 1rem;
-    border: 1px solid rgba(22, 93, 255, 0.1);
+    width: 0.56rem;
+    height: 0.56rem;
+    right: 0.06rem;
+    bottom: 0.08rem;
+    border-radius: 0.22rem;
+    background: linear-gradient(135deg, rgba(22, 93, 255, 0.22), rgba(22, 93, 255, 0.08));
+}
+
+.section-heading--undergraduate .section-icon i {
+    font-size: 0.98rem;
+    transform: translateY(0.02rem);
 }
 
 .section-heading--phd .section-icon {
