@@ -1,21 +1,35 @@
-### **Software Engineer Intern**  
-**January 2025 – June 2025 | ByteDance**  
+### **科研经历**
+**Adaptive Region-aware Blind-Spot Network for Self-Supervised Real Image Denoising**  
+**2024.11 - 2025.07 | 论文已中 TMM（CCF-A），专利预审中**  
 
-Worked on the development and optimization of large-scale recommendation systems, focusing on algorithm improvements and system efficiency enhancements. Contributed to real-time data processing pipelines and model optimization for personalized content delivery.
+项目聚焦真实图像自监督去噪任务，针对现有方法在处理空间相关噪声时表现不足的问题，提出自适应区域感知盲点网络框架 `ARA-BSN`，在无需成对干净图像监督的条件下实现高质量真实噪声去除。
 
-#### Key Contributions:  
-- Developed and optimized recommendation algorithms to enhance user engagement and content relevance.  
-- Designed and implemented real-time data processing workflows to improve model inference efficiency.  
-- Conducted A/B testing and performance analysis to refine recommendation strategies based on user behavior data.  
+#### 研究亮点
+- 提出基于半去噪图像引导的自适应混合扰动策略（AHS），提升网络对强相关噪声的鲁棒性。
+- 引入随机像素下采样技术（RPD），削弱噪声空间相关结构，减少纹理误判。
+- 设计自适应多步长 PD 推理策略（AMPD），按区域特征动态选择最优融合结果。
+- 在 SIDD、DND 等真实噪声数据集上取得有竞争力的实验结果。
 
 ---
 
-### **软件工程师实习生**  
-**2025年1月 – 2025年6月 | 字节跳动**  
+### **科研参与**
+**面向多人自由漫游的自主重定向行走研究及应用**  
+**2023.01 - 2025.12 | 国家自然科学基金项目（参与）**  
 
-负责大规模推荐系统的开发与优化，专注于算法改进和系统效率提升。参与实时数据处理管道的构建，并优化模型推理流程，以提升个性化内容推荐效果。
+项目围绕小空间物理环境中的多人虚拟漫游展开，重点研究重定向行走优化、多用户碰撞规避与沉浸式交互体验提升。我主要参与原型系统场景开发、交互逻辑实现与部分算法研究。
 
-#### 主要贡献:  
-- 研发并优化推荐算法，提高用户互动率和内容相关性。  
-- 设计并实现实时数据处理流程，提升模型推理的计算效率。  
-- 进行A/B测试与性能分析，基于用户行为数据优化推荐策略。
+#### 参与内容
+- 参与构建实验原型系统中的虚拟场景与共享交互环境。
+- 参与研究用户对重定向偏差的知觉特性并协助优化算法。
+- 参与多用户同步漫游中的位置预测与碰撞避免策略研究。
+
+---
+
+### **成果与版权**
+- 实时自监督学习图像去噪处理平台，软件著作权，2025SR0883812。
+- 自监督深度学习图像去噪系统，软件著作权，2025SR1149519。
+
+---
+
+### **工程与竞赛项目**
+项目内容按你的要求先不在主页展开，如后续需要我可以再补成精简版展示。

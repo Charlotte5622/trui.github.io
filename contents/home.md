@@ -1,20 +1,17 @@
-[![XX](https://img.shields.io/badge/XX-github-blue?logo=github)](https://github.com/XX)
+[![GitHub](https://img.shields.io/badge/GitHub-Charlotte5622-blue?logo=github)](https://github.com/Charlotte5622)
 
-I'm currently pursuing a Master's degree in XX at the Department of XX, XX University, XX.
+我目前就读于**山东财经大学**，专业为**信息管理与信息系统（大数据与商务分析方向）**，预计于 **2026 年 6 月**毕业。我的研究与实践兴趣主要集中在**计算机视觉、图像去噪、自监督学习、具身交互与大模型应用**。
 
-#### Email  
-<code>XX@XX.XX</code>  
-<code>XX@XX.XX</code>
+#### 联系方式
+<code>13325112114</code>  
+<code>13325112114@163.com</code>  
+<code>山东省济南市</code>
 
-#### Education  
-**XX University**, Master of XX (XX – XX)  
-• GPA: XX/XX  
+#### 教育背景
+**山东财经大学**, 信息管理与信息系统（大数据与商务分析） 本科（2022.09 - 2026.06）  
+- GPA: 4.38/5.00  
+- 专业排名: 1/492  
+- 奖学金: 2024 国家奖学金、2023-2024 学年特等奖学金
 
-**XX University**, Exchange student <br>  
-• As a XX, represented my college as an outstanding student for a XX exchange program.  
-
-**XX University**, Honours Bachelor of XX (XX – XX)  
-• GPA: XX/XX (top XX%)  
-
-#### Research Interests  
-XX, XX, XX, XX.
+#### 研究兴趣
+计算机视觉，真实图像去噪，自监督学习，混合现实与重定向行走，大模型微调与 RAG。
