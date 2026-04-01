@@ -1,80 +1,165 @@
 @import "./styles.css";
 
+:root {
+    --accent-color: #3e57d0;
+    --accent-soft: #edf1ff;
+    --text-main: #2f3b4b;
+    --text-soft: #687385;
+    --line-color: #e6eaf3;
+    --panel-bg: #ffffff;
+    --page-bg: #fafbfe;
+}
 
-:root{
-    --h-title-color:#3948d2;
-    --soft-border-color:#d9e0f2;
-    --soft-bg-color:#f7f9ff;
+body {
+    background: var(--page-bg);
+    color: var(--text-main);
 }
 
 .header {
-    border-bottom: solid 2px var(--bs-blue);
+    border-bottom: 1px solid var(--line-color);
+    background: rgba(255, 255, 255, 0.96);
+    backdrop-filter: blur(10px);
     z-index: 10000;
 }
 
+.page-shell {
+    max-width: 1220px;
+}
+
 .bg-bottom {
-    background-color: var(--h-title-color);
+    background: #2f3b4b;
 }
 
-.top-section {
-    position: relative;
-    padding: 10rem 0;
-    background-position: center;
-    background-size: cover;
-    height: 25rem;
+.site-main {
+    padding: 7.5rem 0 3rem;
 }
 
-.top-section h2 {
-    font-weight: 400;
+.page-layout {
+    display: grid;
+    grid-template-columns: 270px minmax(0, 1fr);
+    gap: 3rem;
+    align-items: start;
 }
 
-.top-section .top-section-content {
-    position: relative;
-    z-index: 1;
+.profile-sidebar {
+    position: sticky;
+    top: 6.8rem;
 }
 
-.top-section:before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
+.profile-card {
+    background: var(--panel-bg);
+    border: 1px solid var(--line-color);
+    border-radius: 24px;
+    padding: 1.5rem 1.25rem;
+}
+
+.profile-avatar {
     width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
+    max-width: 170px;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+    border-radius: 999px;
+    border: 1px solid var(--line-color);
+    display: block;
+    margin: 0 auto 1.25rem;
 }
 
-section header h2{
-    font-family: "Kanit", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !important;
-    color: var(--h-title-color);
-    font-size: 2.3rem;
-    line-height: 4rem;
+.profile-name {
+    font-family: "Kanit", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: 2rem;
+    color: var(--text-main);
+    margin-bottom: 0.6rem;
 }
 
-section .main-body{
-    font-size: 1.3rem;
-    font-weight: 200;
-    line-height: 2.4rem;
+.profile-affiliation {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: var(--text-soft);
+    margin-bottom: 1.2rem;
+}
+
+.profile-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 0.85rem;
+}
+
+.profile-links li {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    color: var(--text-main);
+    font-size: 1rem;
+}
+
+.profile-links a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.profile-links a:hover {
+    color: var(--accent-color);
+}
+
+.content-column {
+    min-width: 0;
+}
+
+.content-section {
+    background: transparent;
+    padding: 0 0 2.6rem;
+}
+
+.intro-section {
+    padding-top: 0;
+}
+
+.section-heading {
+    border-bottom: 1px solid var(--line-color);
+    margin-bottom: 1.35rem;
+}
+
+.section-heading h2 {
+    font-family: "Kanit", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif !important;
+    color: var(--text-main);
+    font-size: 2rem;
+    line-height: 1.4;
+    margin-bottom: 0.7rem;
+}
+
+.section-heading i {
+    color: #ff8359;
+    margin-right: 0.45rem;
+}
+
+.main-body {
+    font-size: 1.1rem;
+    line-height: 1.9;
+    color: var(--text-main);
 }
 
 .main-body p,
 .main-body li {
-    color: #3d4654;
+    color: var(--text-main);
 }
 
 .main-body details {
-    margin-top: 1.5rem;
-    border: 1px solid var(--soft-border-color);
-    border-radius: 18px;
-    background: var(--soft-bg-color);
+    margin-top: 1rem;
+    border: 1px solid #dbe3fa;
+    border-radius: 20px;
+    background: #f7f9ff;
     overflow: hidden;
 }
 
 .main-body summary {
     list-style: none;
     cursor: pointer;
-    padding: 1rem 1.4rem;
-    font-weight: 600;
-    color: var(--h-title-color);
+    padding: 1rem 1.35rem;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--accent-color);
     user-select: none;
 }
 
@@ -83,66 +168,125 @@ section .main-body{
 }
 
 .main-body details[open] summary {
-    border-bottom: 1px solid var(--soft-border-color);
+    border-bottom: 1px solid #dbe3fa;
 }
 
 .main-body .details-body {
-    padding: 1rem 1.4rem 1.4rem;
+    padding: 1.2rem 1.35rem 1.35rem;
 }
 
-
-.bg-gradient-primary-to-secondary-light {
-    background: linear-gradient(45deg, #fcfcfc, #ffffff) !important;
+.main-body h3 {
+    font-family: "Kanit", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: 1.3rem;
+    margin-bottom: 0.75rem;
+    color: var(--text-main);
 }
 
-.bg-gradient-primary-to-secondary-gray {
-    background: linear-gradient(45deg, #f0f0f0, #f1f1f1) !important;
+.publication-item {
+    display: grid;
+    grid-template-columns: minmax(220px, 320px) minmax(0, 1fr);
+    gap: 1.5rem;
+    padding: 1.25rem 0;
+    border-bottom: 1px solid var(--line-color);
 }
 
-
-
-.on-top {
-    position: relative;
-    z-index: 10000;
+.publication-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
 }
 
-.top-bg {
-    background-position: center;
-    background-size: fill;
-    width: 100%;
-    height: 100%;
+.publication-figure {
+    background: linear-gradient(135deg, #eef3ff, #dfe8ff);
+    border: 1px solid #d7e0f8;
+    border-radius: 16px;
+    min-height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.2rem;
+    color: var(--accent-color);
+    font-weight: 700;
+    text-align: center;
 }
 
-.top-bg::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.4);
+.publication-title {
+    font-size: 1.45rem;
+    line-height: 1.5;
+    margin-bottom: 0.55rem;
 }
 
-
-#avatar {
-    position: relative;
-    height: 0;
-    top:min(-65px,max(-100px,calc(-1*100vw/12)));
-    max-width: 55em;
-    margin: 0 1.5rem 0 0;
-    float: right;
-    z-index: 9000;
+.publication-title a {
+    color: #2448a8;
+    text-decoration: underline;
 }
 
-#avatar img {
-    height: max(130px,min(200px,calc(100vw/6)));
-    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+.publication-authors {
+    color: var(--text-soft);
+    font-size: 1rem;
+    margin-bottom: 0.55rem;
+}
+
+.publication-links {
+    margin-bottom: 0.65rem;
+    font-weight: 700;
+}
+
+.publication-links a {
+    color: #2448a8;
+    text-decoration: underline;
+    margin-right: 0.7rem;
+}
+
+.publication-notes {
+    margin: 0;
+    padding-left: 1.2rem;
+}
+
+.publication-notes li {
+    margin-bottom: 0.45rem;
 }
 
 @media screen and (max-width: 991px) {
-    #avatar {
+    .page-layout {
+        grid-template-columns: 1fr;
+        gap: 1.8rem;
+    }
+
+    .profile-sidebar {
+        position: static;
+    }
+
+    .profile-card {
+        display: grid;
+        grid-template-columns: 120px 1fr;
+        gap: 1rem;
+        align-items: start;
+    }
+
+    .profile-avatar {
+        width: 120px;
         margin: 0;
+    }
+
+    .publication-item {
+        grid-template-columns: 1fr;
     }
 }
 
+@media screen and (max-width: 640px) {
+    .site-main {
+        padding-top: 6.5rem;
+    }
 
+    .profile-card {
+        grid-template-columns: 1fr;
+    }
+
+    .profile-avatar {
+        margin: 0 auto 1rem;
+    }
+
+    .section-heading h2 {
+        font-size: 1.7rem;
+    }
+}

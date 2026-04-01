@@ -1,10 +1,8 @@
-Basic information from my undergraduate stage is organized in the expandable section below.
-
 <details>
-<summary>Click to view undergraduate profile</summary>
+<summary>Click to view undergraduate background</summary>
 <div class="details-body">
 
-### Education Background
+### Education
 - **Shandong University of Finance and Economics**
 - B.Eng. in Information Management and Information System
 - 2022.09 - 2026.06
