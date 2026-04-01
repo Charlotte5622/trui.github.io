@@ -1,72 +1,168 @@
-![Github Forks](https://img.shields.io/github/forks/Yixin0313/personal-homepage-template?style=flat)
-![Github Stars](https://img.shields.io/github/stars/Yixin0313/personal-homepage-template?style=flat)
-![License](https://img.shields.io/github/license/Yixin0313/personal-homepage-template)
+# Tongrui Zhang's Academic Homepage
 
-# 通用个人主页模板：适用于学术和求职场景 | A general-purpose template: suitable for both academic and professional use.
+This repository contains my personal academic homepage for research in computer vision and deep learning.
 
-## 预览 | Preview
-[![Screenshot of the Website](https://raw.githubusercontent.com/Yixin0313/personal-homepage-template/main/screenshot_full.png)](https://yixin0313.github.io/personal-homepage-template/)
+## Overview
 
-## 介绍 | Introduction
+The site is designed as a lightweight, static academic homepage with:
 
-这是一个**通用的个人主页模板**，基于 [Sen Li 的学术主页模板](https://github.com/senli1073/senli1073.github.io) 进行修改。  
+- a responsive two-column layout
+- a refined top navigation bar
+- expandable sections for different academic stages
+- a dedicated `Research Outputs` area for papers and patents
+- mobile-friendly presentation for desktop, tablet, and phone screens
 
-我新增了**工作经历板块**，使其更加适用于程序员和求职者。并且使用了中英文对照版本。
+## Tech Stack
 
-This is a **general-purpose personal website template**, modified from [Sen Li's academic template](https://github.com/senli1073/senli1073.github.io).  
+- HTML
+- CSS
+- JavaScript
+- Bootstrap
+- Markdown content files loaded at runtime
 
-I have added a **work experience section**, making it more practical for programmers and job seekers.
+No build step is required. The site can be deployed directly with GitHub Pages.
 
-Bilibili教程视频：【【2025最新保姆级教程】手把手教你用github制作个人主页（申学找工作必备）】https://www.bilibili.com/video/BV16nNMeFEzm?vd_source=79b688b1a191b9f9e8204aa1c3d0adab
+## Project Structure
 
-CSDN教程：https://blog.csdn.net/qq_45743991/article/details/145505150?spm=1001.2014.3001.5502
-
-## 快速开始 | Getting Start
-### 1. Fork 该仓库 | Fork this repository
-仓库名称应命名为 `<用户名>.github.io`，这样你的个人网站地址将是 `https://<用户名>.github.io/`。
-
-The repository name should be `<username>.github.io`, which will also be your website's URL.
-
-
-### 2.  编辑页面内容 | Edit page content
-(1) 进入你想存放项目的文件夹，并克隆新的仓库 | Go to the folder where you want to store your project, and clone the new repository:
-```
-git clone https://github.com/<username>/<username>.github.io.git
-```
-项目的目录结构如下 | The directory structure is as follows:
-
-```.
+```text
 .
 ├── contents
-└── static
-    ├── assets
-    │   └── img
-    ├── css
-    └── js
+│   ├── config.yml
+│   ├── home.md
+│   ├── publications.md
+│   ├── awards.md
+│   └── experience.md
+├── static
+│   ├── assets
+│   │   ├── favicon.ico
+│   │   └── img
+│   ├── css
+│   │   ├── styles.css
+│   │   └── main.css
+│   └── js
+│       ├── scripts.js
+│       └── ...
+├── index.html
+└── README.md
 ```
 
-(2) 修改各个板块的内容 | Modify the content of each section, which corresponds to `contents/*.md`.
+## Content Mapping
 
-(3) 调整网站设置 | Adjust the title, copyright information, and other text of the website in `contents/config.yml`
+The homepage content is organized as follows:
 
-(4) 替换图片 | Replace background image and photo with new ones for your web pages in `static/assets/img/`
+- `contents/config.yml`
+  Site title, sidebar information, copyright, and academic profile links
 
-(5) 提交更改 | Push it: 
+- `contents/home.md`
+  Introductory homepage text
+
+- `contents/publications.md`
+  Research outputs section, including paper cards and patent entries
+
+- `contents/awards.md`
+  Undergraduate background and academic record
+
+- `contents/experience.md`
+  Ph.D.-stage placeholder and future updates
+
+## How To Update
+
+### 1. Update personal profile
+
+Edit `contents/config.yml` to change:
+
+- page title
+- sidebar name
+- affiliation
+- location
+- email
+- GitHub / Google Scholar / ORCID / ResearchGate links
+
+### 2. Update homepage introduction
+
+Edit `contents/home.md`.
+
+### 3. Update research outputs
+
+Edit `contents/publications.md`.
+
+The paper card area is already styled as a figure slot for real paper images. To replace the placeholder:
+
+1. put your paper figure into `static/assets/img/`
+2. replace the placeholder block in `contents/publications.md` with an actual `<img>` tag
+3. keep the surrounding `publication-item` structure unchanged for best layout results
+
+### 4. Update undergraduate or Ph.D. sections
+
+Edit:
+
+- `contents/awards.md`
+- `contents/experience.md`
+
+### 5. Replace avatar and other images
+
+Suggested files:
+
+- avatar: `static/assets/img/photo.png`
+- paper figures: `static/assets/img/`
+
+## Local Preview
+
+You can preview the site locally with a simple static server:
+
+```bash
+python -m http.server 8000
 ```
-git commit -am 'init'
-git push
+
+Then open:
+
+```text
+http://localhost:8000/
 ```
 
+## Deployment
 
-### 3. 访问你的网站 | Enjoy
+This project is suitable for GitHub Pages deployment.
 
-打开浏览器，访问 https://<用户名>.github.io，即可查看你的个人主页
+### Recommended setup
 
-Fire up a browser and go to `https://<username>.github.io`
+If you want your homepage to be served as:
 
+```text
+https://<username>.github.io/
+```
 
+name the repository:
+
+```text
+<username>.github.io
+```
+
+### GitHub Pages settings
+
+In GitHub:
+
+1. Open `Settings`
+2. Go to `Pages`
+3. Set `Source` to `Deploy from a branch`
+4. Select branch `main`
+5. Select folder `/ (root)`
+
+Then push your latest changes:
+
+```bash
+git add .
+git commit -m "update homepage"
+git push origin main
+```
+
+## Notes
+
+- The site is fully static and easy to maintain
+- The navigation and layout are optimized for mobile devices
+- The paper figure area is intentionally reserved for real research images
+- If DOI, code, or publication links are not yet public, placeholder text can be used temporarily
 
 ## License
-本项目基于 MIT 许可协议，你可以自由使用和修改此模板。 Yixin Huang 2025年2月7号
 
-Copyright Yixin Huang, 2025. Licensed under an MIT license. You can copy and mess with this template.
+This repository includes the original open-source template license and has been customized for personal academic use.

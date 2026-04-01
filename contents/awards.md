@@ -4,7 +4,7 @@
 
 ### Education
 - **Shandong University of Finance and Economics**
-- B.Eng. in Information Management and Information System
+- B.Eng. in Information Management and Information Systems
 - 2022.09 - 2026.06
 
 ### Academic Record

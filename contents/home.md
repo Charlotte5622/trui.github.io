@@ -1,3 +1,3 @@
-I will begin my direct Ph.D. program at **Huazhong University of Science and Technology** in **September 2026**. My research interests lie in **computer vision**, **image denoising**, **self-supervised learning**, **embodied interaction**, and **large model fine-tuning with RAG**.
+I will join **Huazhong University of Science and Technology** as an incoming direct Ph.D. student in **September 2026**. My research focuses on **computer vision** and **deep learning**, with particular interests in **image denoising**, **self-supervised learning**, **embodied interaction**, and **large-model fine-tuning with retrieval-augmented generation**.
 
-This homepage is organized in a stage-aware style. Research outputs are listed independently, while my undergraduate background and future Ph.D.-stage updates are placed in separate expandable sections below.
+This homepage presents my academic profile in a clear stage-aware structure. The **Research Outputs** section lists papers and patents in a unified format, while the **Undergraduate** and **Ph.D.** sections summarize background information and future updates separately.

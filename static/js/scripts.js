@@ -2,6 +2,55 @@ const content_dir = 'contents/'
 const config_file = 'config.yml'
 const section_names = ['home', 'awards', 'experience', 'publications'];
 
+function bindConfigLinks(yml) {
+    const optionalLinks = [
+        ['sidebar-email-link', yml['sidebar-email-link']],
+        ['sidebar-scholar-link', yml['sidebar-scholar-link']],
+        ['sidebar-orcid-link', yml['sidebar-orcid-link']],
+        ['sidebar-rg-link', yml['sidebar-rg-link']]
+    ];
+
+    optionalLinks.forEach(([id, href]) => {
+        const element = document.getElementById(id);
+        if (!element) {
+            return;
+        }
+        if (href) {
+            element.href = href;
+        } else {
+            element.removeAttribute('href');
+            element.classList.add('is-placeholder');
+        }
+    });
+}
+
+function enhanceDetailsAnimations(root = document) {
+    const detailsElements = root.querySelectorAll('details');
+    detailsElements.forEach((details) => {
+        if (details.dataset.enhanced === 'true') {
+            return;
+        }
+        details.dataset.enhanced = 'true';
+
+        const body = details.querySelector('.details-body');
+        if (!body) {
+            return;
+        }
+
+        if (details.hasAttribute('open')) {
+            details.classList.add('is-open');
+        }
+
+        details.addEventListener('toggle', () => {
+            if (details.open) {
+                details.classList.add('is-open');
+            } else {
+                details.classList.remove('is-open');
+            }
+        });
+    });
+}
+
 
 window.addEventListener('DOMContentLoaded', event => {
 
@@ -41,6 +90,7 @@ window.addEventListener('DOMContentLoaded', event => {
                 }
 
             })
+            bindConfigLinks(yml);
         })
         .catch(error => console.log(error));
 
@@ -53,6 +103,7 @@ window.addEventListener('DOMContentLoaded', event => {
             .then(markdown => {
                 const html = marked.parse(markdown);
                 document.getElementById(name + '-md').innerHTML = html;
+                enhanceDetailsAnimations(document.getElementById(name + '-md'));
             }).then(() => {
                 // MathJax
                 MathJax.typeset();
